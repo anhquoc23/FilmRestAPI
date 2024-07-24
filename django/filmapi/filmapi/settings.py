@@ -62,8 +62,11 @@ WSGI_APPLICATION = 'filmapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'filmdb',
+        'USER': 'root',
+        'PASSWORD': 'Anhquoc@2476',
+        'localhost': ''
     }
 }
 
@@ -130,3 +133,10 @@ TEMPLATES = [ {
         "DIRS": [os.path.join(BASE_DIR, 'templates')]
     }
 ]
+
+import pymysql as mysql
+mysql.install_as_MySQLdb()
+
+AUTH_USER_MODEL = 'filmapp.User'
+
+MEDIA_ROOT = '%s/filmapp/static' % BASE_DIR
