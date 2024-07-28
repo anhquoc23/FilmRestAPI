@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+import cloudinary
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -140,3 +142,10 @@ mysql.install_as_MySQLdb()
 AUTH_USER_MODEL = 'filmapp.User'
 
 MEDIA_ROOT = '%s/filmapp/static' % BASE_DIR
+
+cloudinary.config(
+    cloud_name = "dhbvb6aqb",
+    api_key = "212448481673923",
+    api_secret = "VPRfXnAF9KR0nrYRfKIQG5kAL-s", # Click 'View Credentials' below to copy your API secret
+    secure=True
+)
